@@ -1,0 +1,22 @@
+/* In general, priority order for diff stylesheets are
+Inline stylesheet > Internal stylesheet > External stylesheet 
+However, specificity and important declarations can alter this order.*/
+
+/* External stylesheet */
+p {
+  color: red;
+  font-size: 72px;
+}
+/* Anatomy of CSS
+   p - selector
+   color - property
+   red - property value
+   color: red; - declaration 
+   p { color: red; font-size: 72px; } - Ruleset
+*/
+
+/* 
+CSS doesn't throw errors but just ignore the errors during execution and execute without the wrong parts and apply only the right parts of CSS
+
+Maybe use online css validation websites like (https://jigsaw.w3.org/css-validator/) to identify errors in html and css files
+*/
