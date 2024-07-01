@@ -187,16 +187,18 @@ body{
 }
 a{
   text-decoration: overline;
-  /* cursor: not-allowed; */
-  color: black;
+  cursor:pointer;
+  color: rgb(0, 0, 255);
 }
 /* a:visited, a:active, a:hover "visited,active,hover" are pseudo classes*/
-a:hover{
-  color: coral;
-}
 a:visited{
-  color: brown;
+  color: purple;
 }
+a:hover , a:focus{
+  color: rgb(0, 0, 255);
+  opacity: 0.5;
+}
+
 a:active{
   color: aqua;
 }
