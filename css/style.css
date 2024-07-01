@@ -1,12 +1,14 @@
+/* CSS Tutorial Video - https://www.youtube.com/watch?v=GlEY28YLffs */
+
 /* In general, priority order for diff stylesheets are
 Inline stylesheet > Internal stylesheet > External stylesheet 
 However, specificity and important declarations can alter this order.*/
 
 /* External stylesheet */
-p {
+/* p {
   color: red;
   font-size: 72px;
-}
+} */
 /* Anatomy of CSS
    p - selector
    color - property
@@ -20,3 +22,181 @@ CSS doesn't throw errors but just ignore the errors during execution and execute
 
 Maybe use online css validation websites like (https://jigsaw.w3.org/css-validator/) to identify errors in html and css files
 */
+
+/* use the website - https://specificity.keegan.st/ for a visual way to understand CSS specificity */
+
+/* universal selector - "*" operator, the properties are applied to every element*/
+/* * {
+  font-family: "Courier New", Courier, monospace;
+  border: 2px solid crimson;
+} */
+/* body {
+  font-size: 24px;
+  border: 3px solid black;
+} */
+/* grouping selectors using "," operator */
+/* apply properties to the 2 tags - h1,h2 */
+/* h1,
+h2 {
+  color: green;
+} */
+
+/* apply the proerties to the span tag inside the p tag */
+/* p span {
+  background-color: black;
+} */
+/* alternative of using this is using classes with "." operator */
+/* .highlight {
+  background-color: black;
+}
+
+p {
+  color: blue;
+} */
+/* the last p tag properties gets updated as the properties to be applied to the p tag(the properties get overwritten)*/
+/* p {
+  color: red;
+}
+
+.gray {
+  color: gray;
+  font-style: italic;
+}
+
+#second {
+  color: firebrick;
+} */
+
+/* the main and body tags are different when applying properties */
+/* body {
+  font-size: 22px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  background-color: yellowgreen;
+}
+/* use  the website - https://coolors.co/ to choose colors*/
+/*p {
+  /* color: rgb(100, 0, 100); */
+/* color: rgba(112, 112, 238, 1); */
+/* color: #249; Hexadecimal code for colors*/
+/* color: hsl(300, 100%, 20%); hsl-hue,saturation,lightness*/
+/* color: hwb(300 0% 61%); */
+/*} */
+
+/* for units and size - https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Values_and_Units */
+
+/* html {
+  font-size: 10px;
+} */
+/* header {
+  width: 10%;
+} */
+/* % percentage values are always related to some other elements */
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  /* font-size: 50px; */ /*
+  border: 2px dashed red;
+  width: 50%;
+  font-size: 3rem;
+  padding: 0.5em;
+} */
+
+/* main {
+  /* font-size: 2rem; */
+/* rem - root element * 2(given value) . In this case html is the root element so the font size is 10px*2=20px is the font size of main */ /*
+  font-size: 1rem;
+  /* width: 50vw; vw - viewport width */
+/* background-color: rgb(43, 255, 0); */
+/* } */
+/* 
+body{
+  min-height: 100vh; /* vh - viewport height */
+/* } */
+
+/* p { */
+/* font-size: 2em; */
+/* em - parent element * 2(given value) . In this case main is the parent element so the font size is 20px*2=40px is the font size of p */
+/* font-size: 1rem; */
+/* width: 40ch; */
+/* 40ch - after 40 characters in 1 line move to newline */
+/* }  */
+
+/* CSS box model - Content, Padding, Border, Margin (CPBM) */
+/* using box model we can view and analyze the spaces occupied by the tags in the webpage*/
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+} */
+/* .container {
+  border: 3px dotted red;
+  font-size: 1.5rem; */
+/* margin: 0.5em; */
+/* margin-top: 1em; */
+/* margin-right: 2em;  */
+/* for margin and padding */
+/* top right bottom left for 4 values */
+/* (top,bottom) and (left,right) for 2 values */
+/* (top,right,bottom,left) for 1 value*/
+/* margin: 1.5em;
+  padding: 1.5em; */
+/* outline: 5px solid blue;
+  outline-offset: -20px; */
+/* } */
+
+.circle {
+  margin: 2em auto;
+  background-color: yellow;
+  border: 10px solid green;
+  border-radius: 40%;
+  width: 100px;
+  height: 100px;
+  outline: 5px dashed black;
+  outline-offset: 10px;
+}
+
+/* Typography - arranging texts */
+/* body {
+  padding: 10%;
+  font-size: 1.5rem;
+}
+input,
+button {
+  font-size: inherit; */
+  /* inherits the font-size from body */
+/* } */
+/* p { */
+  /* text-indent: 2em; */
+  /* line-height: 1.5; */
+  /* letter-spacing: 0.2em; */
+  /* word-spacing: 1.2em; */
+  /* font-weight: 600; */
+  /* font-style: oblique; */
+  /* font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
+  /* use the website - https://fonts.google.com/ for new fonts */
+/* } */
+
+/* Styling Links */
+body{
+  padding: 10%;
+  font-size: 1rem;
+}
+a{
+  text-decoration: overline;
+  /* cursor: not-allowed; */
+  color: black;
+}
+/* a:visited, a:active, a:hover "visited,active,hover" are pseudo classes*/
+a:hover{
+  color: coral;
+}
+a:visited{
+  color: brown;
+}
+a:active{
+  color: aqua;
+}
