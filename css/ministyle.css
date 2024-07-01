@@ -1,0 +1,14 @@
+li{
+    text-align: center;
+    list-style: upper-alpha inside;
+}
+
+.navbar{
+    background-color: brown;
+    background-blend-mode: difference;
+    border-radius: 50%;
+    border-color: rgb(30, 255, 0);
+    border-style: dotted;
+    align-content: center;
+    border-radius: 80%;
+}

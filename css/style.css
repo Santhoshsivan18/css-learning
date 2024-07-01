@@ -41,7 +41,7 @@ h2 {
   color: green;
 } */
 
-/* apply the proerties to the span tag inside the p tag */
+/* apply the properties to the span tag inside the p tag */
 /* p span {
   background-color: black;
 } */
@@ -167,21 +167,21 @@ body{
 input,
 button {
   font-size: inherit; */
-  /* inherits the font-size from body */
+/* inherits the font-size from body */
 /* } */
 /* p { */
-  /* text-indent: 2em; */
-  /* line-height: 1.5; */
-  /* letter-spacing: 0.2em; */
-  /* word-spacing: 1.2em; */
-  /* font-weight: 600; */
-  /* font-style: oblique; */
-  /* font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
-  /* use the website - https://fonts.google.com/ for new fonts */
+/* text-indent: 2em; */
+/* line-height: 1.5; */
+/* letter-spacing: 0.2em; */
+/* word-spacing: 1.2em; */
+/* font-weight: 600; */
+/* font-style: oblique; */
+/* font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
+/* use the website - https://fonts.google.com/ for new fonts */
 /* } */
 
 /* Styling Links */
-body{
+/* body{
   padding: 10%;
   font-size: 1rem;
 }
@@ -189,9 +189,9 @@ a{
   text-decoration: overline;
   cursor:pointer;
   color: rgb(0, 0, 255);
-}
+} */
 /* a:visited, a:active, a:hover "visited,active,hover" are pseudo classes*/
-a:visited{
+/* a:visited{
   color: purple;
 }
 a:hover , a:focus{
@@ -201,4 +201,39 @@ a:hover , a:focus{
 
 a:active{
   color: aqua;
+} */
+
+/* Styling lists */
+body {
+  padding: 10%;
+  font-size: 1rem;
 }
+/* ordered list and unordered list can be represented as the other by modifying the list-style-type property */
+ol {
+  list-style-type: upper-alpha;
+  /* list-style-type: none; */
+}
+
+ul {
+  text-align: center;
+  list-style-position: inside;
+  color: blue;
+  /* list-style-image: url(../css/bulletin.png) ; */
+  /*  for the below line of code, if there's a problem with the image in the url then the square will be displayed for the list */
+  /* list-style: square url(../css/bulletin.png) inside; */
+}
+/* use nth child pesudo class with li tag for applying individual css properties to individual point*/
+ol li:nth-child(2) {
+  color: rgb(255, 0, 0);
+}
+/* pseudo class - : 
+   pseudo elements - ::*/
+::marker {
+  color: rgb(55, 101, 119);
+}
+ul li::marker {
+  color: yellowgreen;
+  font-size: 2em;
+  content: "Subscribe >>";
+}
+
