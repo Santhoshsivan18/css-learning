@@ -211,16 +211,16 @@ a:active{
 /* ordered list and unordered list can be represented as the other by modifying the list-style-type property */
 /* ol {
   list-style-type: upper-alpha; */
-  /* list-style-type: none; */
+/* list-style-type: none; */
 /* } */
 
 /* ul {
   text-align: center;
   list-style-position: inside;
   color: blue; */
-  /* list-style-image: url(../css/bulletin.png) ; */
-  /*  for the below line of code, if there's a problem with the image in the url then the square will be displayed for the list */
-  /* list-style: square url(../css/bulletin.png) inside; */
+/* list-style-image: url(../css/bulletin.png) ; */
+/*  for the below line of code, if there's a problem with the image in the url then the square will be displayed for the list */
+/* list-style: square url(../css/bulletin.png) inside; */
 /* } */
 /* use nth child pesudo class with li tag for applying individual css properties to individual point*/
 /* ol li:nth-child(2) {
@@ -237,6 +237,94 @@ ul li::marker {
   content: "Subscribe >>";
 } */
 
-p{
+/* *{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-size: 2.5rem;
+} */
+/* p {
   background-color: gray;
+} */
+
+/* .opposite {
+  display: inline-block;
+  background-color: yellow;
+  color: burlywood;
+  margin-top: 100px; */
+  /* this margin-top property can't be applied as there's no space this is the case of inline element when there's no space the property is applied but not visible*/
+  /* padding: 1rem; */
+  /* this padding property and margin-top proerty can't be worked correctly here hence display property is used. For display property inline is the default value */
+/* } */
+
+/* ul{
+  list-style-type: none;
+  margin: 0;
+  background-color: yellow;
+  padding: 1rem;
+  text-align: right;
+}
+
+li{
+  display: inline-block;
+  margin-inline: 0.5rem;
+}
+
+li a{
+  text-decoration: none;
+  color: black;
+}
+
+li a:hover, li a:focus{
+  color: yellow;
+  background-color: black;
+  text-decoration:underline;
+  text-decoration-color: aqua;
+} */
+
+/* body{
+  font-size: 1.75rem;
+  text-align: justify;
+}
+
+.block{
+  background-color: black;
+  color: aliceblue;
+  width: 30vw;
+  height: 30vw;
+  padding: 1rem;
+} */
+/* using float property */
+/* .left{
+  float: left;
+  margin-right: 10px;
+}
+
+.right{
+  float: right;
+  margin-left: 20px;
+} */
+/* using clear property for newline */
+/* .clear{
+  clear: both;
+} */
+/* when the p tag contains less words the box overflows. Both the p tag and div tag are present inside the section tag internally but this problem persists. This problem occurs irrespective of the clear class to move onto newline. To rectify this problem, overflow property is used in older times. But in recent times, display property is used*/
+/* section{
+  background-color: yellowgreen;
+  border: 2px solid black;
+  padding: 1rem;
+  overflow: auto;
+  display: flow-root;
+} */
+
+body{
+  font-size: 1.5rem;
+}
+/* use column property to use column values for tags */
+.column{
+  /* column-count: 4;
+  column-width: 200px; */
+  columns: 4 250px;
 }
