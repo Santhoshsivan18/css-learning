@@ -1,14 +1,52 @@
-li{
-    text-align: center;
-    list-style: upper-alpha inside;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.navbar{
-    background-color: brown;
-    background-blend-mode: difference;
-    border-radius: 50%;
-    border-color: rgb(30, 255, 0);
-    border-style: dotted;
-    align-content: center;
-    border-radius: 80%;
+body{
+  margin: 0.5rem;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  text-align: center;
+}
+
+nav{
+  border: 2px solid black;
+  border-radius: 2rem;
+  margin:0 auto 1rem;
+  max-width: 600px;
+  font-size: 3rem;
+  line-height: 7rem;
+}
+
+h2{
+  padding: 1rem;
+  background-color: gold;
+  border-radius: 2rem 2rem 0 0;
+}
+
+ul{
+  list-style-type: none;
+}
+
+li{
+  border-top: 1px solid black;
+}
+
+li a, li a:visited{
+  text-decoration: none;
+  color: black;
+}
+
+li a:hover, li a:focus{
+  background: black;
+  color: white;
+}
+
+li a{
+  display: block;
+}
+
+li:last-child a{
+  border-radius: 0 0 2rem 2rem;
 }

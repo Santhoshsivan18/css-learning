@@ -148,7 +148,7 @@ body{
   outline-offset: -20px; */
 /* } */
 
-.circle {
+/* .circle {
   margin: 2em auto;
   background-color: yellow;
   border: 10px solid green;
@@ -157,7 +157,7 @@ body{
   height: 100px;
   outline: 5px dashed black;
   outline-offset: 10px;
-}
+} */
 
 /* Typography - arranging texts */
 /* body {
@@ -204,36 +204,39 @@ a:active{
 } */
 
 /* Styling lists */
-body {
+/* body {
   padding: 10%;
   font-size: 1rem;
-}
+} */
 /* ordered list and unordered list can be represented as the other by modifying the list-style-type property */
-ol {
-  list-style-type: upper-alpha;
+/* ol {
+  list-style-type: upper-alpha; */
   /* list-style-type: none; */
-}
+/* } */
 
-ul {
+/* ul {
   text-align: center;
   list-style-position: inside;
-  color: blue;
+  color: blue; */
   /* list-style-image: url(../css/bulletin.png) ; */
   /*  for the below line of code, if there's a problem with the image in the url then the square will be displayed for the list */
   /* list-style: square url(../css/bulletin.png) inside; */
-}
+/* } */
 /* use nth child pesudo class with li tag for applying individual css properties to individual point*/
-ol li:nth-child(2) {
+/* ol li:nth-child(2) {
   color: rgb(255, 0, 0);
-}
+} */
 /* pseudo class - : 
    pseudo elements - ::*/
-::marker {
+/* ::marker {
   color: rgb(55, 101, 119);
 }
 ul li::marker {
   color: yellowgreen;
   font-size: 2em;
   content: "Subscribe >>";
-}
+} */
 
+p{
+  background-color: gray;
+}
