@@ -254,9 +254,9 @@ body {
   background-color: yellow;
   color: burlywood;
   margin-top: 100px; */
-  /* this margin-top property can't be applied as there's no space this is the case of inline element when there's no space the property is applied but not visible*/
-  /* padding: 1rem; */
-  /* this padding property and margin-top proerty can't be worked correctly here hence display property is used. For display property inline is the default value */
+/* this margin-top property can't be applied as there's no space this is the case of inline element when there's no space the property is applied but not visible*/
+/* padding: 1rem; */
+/* this padding property and margin-top proerty can't be worked correctly here hence display property is used. For display property inline is the default value */
 /* } */
 
 /* ul{
@@ -319,12 +319,177 @@ li a:hover, li a:focus{
   display: flow-root;
 } */
 
-body{
+/* body{
+  font-size: 1.5rem;
+} */
+/* use column property to use column values for tags */
+/* .column{ */
+/* column-count: 4;
+  column-width: 200px; */
+/* columns: 4 250px;
+  column-rule: 2px solid black;
+  column-gap: 3rem;
+} */
+/* the margin for the 1st and 2nd paragrapgh gets collapsed automatically. This is called margin collapsing where each para takes the common margin when needed */
+/* .column p{
+  margin-top: 0;
+}
+
+.column h2{
+  background-color: aqua;
+  color: black;
+  padding: 3rem;
+  margin: 0; */
+/* break-inside - this avoids the content in the h2 from breaking for column space, Use this often for good practice*/
+/* break-inside: avoid;  */
+/* column has more priority and the h2 block gets fixed at the start of column */
+/* break-before: column; */
+/* } */
+
+/* .column 
+.quote{
+  margin-top: 1rem;  */
+/*  this property is not applied as it has less specificity compared to .column p{margin-top: 0;}. specificity = priority. use the specificity calculator website to check it*/
+/* color: red;
+  text-align: center;
+  font-size: 3rem; */
+/* use this column-span property to commonly display the text across all columns using the all value */
+/* column-span: all;
+} */
+/* this white-space property and nowrap values is used when the content should not go to another space but retain in the same original place. In this case all the hyphes(-) are connected to the text after it, when u resize the page the hyphes and the text after it will not split when using this property */
+/* .nowrap{
+  white-space: nowrap;
+} */
+
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 1.5rem;
+  min-height: 200vh;
+}
+
+.outer-container {
+  border: 3px dashed black;
+  width: 75vw;
+  height: 85vh;
+  margin: 40px auto;
+  position: relative;
+} */
+
+/* .inner-container{
+  border: 2px solid blue;
+  width: 40vw;
+  height: 50vh;
+  margin: 200px auto; */
+/* this position property with relative value takes 1st priority as it's the immediate parent and alters it's position relative to it */
+/* position: relative; */
+/* } */
+
+/* .box{
+  width: 150px;
+  height: 150px;
+  color: white; */
+/* border: 2px solid red; */
+/* padding: 1rem;
+}
+
+.absolute{
+  background-color: blue; */
+/* for absolute value position there should be a position: relative; defined in the parent class whichever the dev needs the parent to be or else this position property value can't be used */
+/* position: absolute;
+  top: 0px;
+  left: 0px; */
+/*   left: -10000px; - this makes the element not visible to the user but it's present at the leftmost position but present in the page */
+/* although the fixed property is applied using this z-property we can make it's position as behind the element but fixed in the same position */
+/* z-index: 1; */
+/* } */
+
+/* .relative{
+  background-color: red;
+  position: relative;
+  top: 100px;
+  left: 100px;
+} */
+
+/* .fixed{
+  background-color: green; */
+/* fixed value in position property takes the reference position as the whole page's margin and also it does'nt move out when the user scrolls the pages it's fixed in the same position */
+/* position: fixed;
+  top: 100px;
+  left: 200px;
+} */
+
+/* .sticky{
+  background-color: black; */
+/* the sticky value sticks to the page bottom or top depending on the scroll and it goes away when it's parent element is scrolled away from the page */
+/* position: sticky;
+  top: 100px;
+} */
+/* 
+html {
+  scroll-behavior: smooth;
+}
+body {
   font-size: 1.5rem;
 }
-/* use column property to use column values for tags */
-.column{
-  /* column-count: 4;
-  column-width: 200px; */
-  columns: 4 250px;
+section {
+  height: 100vw;
 }
+
+.blue {
+  background-color: blue;
+}
+.red {
+  background-color: red;
+}
+.green {
+  background-color: green;
+}
+
+header,
+footer {
+  color: whitesmoke;
+  text-align: center;
+  height: 80px;
+  padding: 1rem;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  font-size: 4rem;
+}
+
+footer {
+  position: sticky;
+  bottom: 0;
+  font-size: 2rem;
+  background-color: black;
+}
+
+a {
+  color: azure;
+}
+
+.button {
+  background-color: aquamarine;
+  font-size: inherit;
+  color: blue;
+  position: fixed;
+  top: 30%;
+  left: 0;
+  z-index: 1;
+}
+.button1 {
+  background-color: aquamarine;
+  font-size: inherit;
+  color: blue;
+  position: fixed;
+  top: 40%;
+  left: 0;
+  z-index: 1;
+} */
