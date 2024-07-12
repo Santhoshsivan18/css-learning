@@ -493,8 +493,8 @@ a {
   left: 0;
   z-index: 1;
 } */
-
-* {
+/* Flexbox layout */
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -503,23 +503,83 @@ a {
 body {
   min-height: 100vh;
   padding: 20px;
-}
-
-.container {
+} */
+/* resize the webpage to see the use of flexbox  */
+/* .container {
   max-width: 800px;
-  min-height: 400px;
+  min-height: 700px;
   margin-inline: auto;
   border: 2px solid red;
-  display:flex;
-  justify-content:space-between;
-  /* gap: 1rem; */
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  align-items: center; */
+/* flex-direction: row;
+  flex-wrap: wrap; */
+/* flex-flow is an alternate for both flex-direction and flex-wrap */
+/* flex-flow: row nowrap;
+  align-content: space-evenly;
+}
+
+.box { */
+/* min-width: 100px; */
+/* height: 100px;
+  background-color: black;
+  color: aliceblue;
+  font-size: 2rem;
+  padding: 0.5rem; */
+/* use these 3 following properties to make the flexbox and it'c ontents as center */
+/* display: flex;
+  justify-content: center;
+  align-items: center;
+ */
+/* instead of using min-width use flex-basis to set a min-width for items in flexbox */
+/* flex-basis: 100px; */
+/* using flex-grow makes the items take full space of the container irrespective of the item space in the container. flex-basis is the min-width but when we use flex-grow the element automatically takes up the whole space available in the container */
+/* flex-grow: 1; */
+/* flex-shrink: 1; */
+/* use flex-shrink to shrink the flexbox */
+/* flex: 1 1 200px; */
+/* flex: flex-grow flex-shrink flex-basis */
+/* make sure you use nowrap value to notice the flex-grow flex-shrink flex-basis properties being applied */
+/* } */
+
+/* .box:nth-child(2) { */
+/* this value 2 in flex-grow/flex-shrink grows more/shrinks more compared to 1 in previous lines */
+/* flex-shrink: 2; */
+/* flex: 2 2 200px; */
+/* control the order of the items using order property */
+/* order: 1; */
+/* } */
+
+/* Grid layout */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
 }
 
 .box {
-  min-width: 100px;
-  min-height: 100px;
   background-color: black;
   color: aliceblue;
   font-size: 2rem;
   padding: 0.5rem;
+}
+
+.container {
+  display: grid;
+  /* grid-auto-flow: column; */
+  /* this grid-template-columns property gives a template for all the column in the grid. fr-fraction unit should be used here for goof practise. */
+  /* grid-template-columns: 200px 100px;  */
+  /* grid-template-columns: 2fr 1fr;  */
+  /* use repeat property inside it to repeat the values. */
+  /* grid-template-columns: repeat(4, 1fr);  */
+  /* to generate a pattern use the repeat property as follows */
+  /* grid-template-columns: repeat(4, 2fr 1fr);  */
+  /* using it like this the columns are alignes as the 1st column is 200px and the remaining columns as 2fr and 1fr */
+  grid-template-columns: 200px 2fr 1fr;
 }
