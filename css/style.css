@@ -553,7 +553,7 @@ body {
 /* } */
 
 /* Grid layout */
-* {
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -563,15 +563,15 @@ body {
   min-height: 100vh;
   display: grid;
   grid-template-columns: repeat(9, 1fr);
-  grid-auto-rows: 50px auto 50px;
-  /* grid-template-areas - use this to name the grid areas individually */
-  grid-template-areas:
-    "hd hd hd hd hd hd hd hd hd" /*1st row names*/
-    "mn mn mn mn mn mn mn sd sd" /*2nd row names*/
-    "ft ft ft ft ft ft ft ft ft"; /*3rd row names*/
-}
+  grid-auto-rows: 50px auto 50px; */
+/* grid-template-areas - use this to name the grid areas individually */
+/* grid-template-areas: */
+/*    "hd hd hd hd hd hd hd hd hd" /*1st row names*/
+/*    "mn mn mn mn mn mn mn sd sd" /*2nd row names*/
+/*    "ft ft ft ft ft ft ft ft ft"; /*3rd row names*/
+/* } */
 
-.el{
+/* .el{
   display: grid;
   background-color: brown;
   color: aliceblue;
@@ -593,29 +593,29 @@ body {
 .container {
   grid-area: mn;
   min-height: 400px;
-  display: grid;
-  /* grid-auto-flow: column; */
-  /* this grid-template-columns property gives a template for all the column in the grid. fr-fraction unit should be used here for goof practise. */
-  /* grid-template-columns: 200px 100px;  */
-  /* grid-template-columns: 2fr 1fr;  */
-  /* use repeat property inside it to repeat the values. */
-  grid-template-columns: repeat(2, 1fr 2fr);
-  /* to generate a pattern use the repeat property as follows */
-  /* grid-template-columns: repeat(4, 2fr 1fr);  */
-  /* using it like this the columns are alignes as the 1st column is 200px and the remaining columns as 2fr and 1fr */
-  /* grid-template-columns: 200px 2fr 1fr; */
-  /* grid-template-rows: 200px 2fr 1fr; */
-  /* minmax() function - min:150px max:auto */
-  /* grid-auto-rows: minmax(150px, auto); */
-  grid-auto-rows: 150px;
-  /* grid-auto-columns: 200px; */
-  /* row-gap: 1em;
+  display: grid; */
+/* grid-auto-flow: column; */
+/* this grid-template-columns property gives a template for all the column in the grid. fr-fraction unit should be used here for goof practise. */
+/* grid-template-columns: 200px 100px;  */
+/* grid-template-columns: 2fr 1fr;  */
+/* use repeat property inside it to repeat the values. */
+/* grid-template-columns: repeat(2, 1fr 2fr); */
+/* to generate a pattern use the repeat property as follows */
+/* grid-template-columns: repeat(4, 2fr 1fr);  */
+/* using it like this the columns are alignes as the 1st column is 200px and the remaining columns as 2fr and 1fr */
+/* grid-template-columns: 200px 2fr 1fr; */
+/* grid-template-rows: 200px 2fr 1fr; */
+/* minmax() function - min:150px max:auto */
+/* grid-auto-rows: minmax(150px, auto); */
+/* grid-auto-rows: 150px; */
+/* grid-auto-columns: 200px; */
+/* row-gap: 1em;
   column-gap: 1em; */
-  /* gap: 1em 2em; row-1em column-2em */
-  gap: 1rem;
-}
+/* gap: 1em 2em; row-1em column-2em */
+/* gap: 1rem; */
+/* } */
 
-.box {
+/* .box {
   background-color: black;
   color: aliceblue;
   font-size: 2rem;
@@ -623,23 +623,113 @@ body {
 }
 
 .box:first-child {
-  background-color: blue;
-  /* grid-row-start: 1;
+  background-color: blue; */
+/* grid-row-start: 1;
   grid-row-end: 3; */
-  grid-row: 1 / 3;
-  /* grid-column-start: 1;
+/* grid-row: 1 / 3; */
+/* grid-column-start: 1;
   grid-column-end: 4; */
-  grid-column: 1 / 4;
+/* grid-column: 1 / 4; */
 
-  display: grid;
-  /* align-content: start;
+/* display: grid; */
+/* align-content: start;
   justify-content: center; */
-  /* place-content is an alternate for both align-content justify-content */
-  place-content: start center;
+/* place-content is an alternate for both align-content justify-content */
+/* place-content: start center; */
+/* } */
+/* 
+.box:nth-child(2) {
+  background-color: blueviolet; */
+/* grid-column: 1 / 4;
+  grid-row: 3 / 4; */
+/* } */
+
+/* Styling images */
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.box:nth-child(2) {
-  background-color: blueviolet;
-  /* grid-column: 1 / 4;
-  grid-row: 3 / 4; */
+body {
+  min-height: 100svh; */
+  /* background-color: aliceblue;
+  background-image: url(../css/bulletin.png),linear-gradient(to left, steelblue,black);
+  background-repeat: repeat-y, no-repeat;
+  background-position: right; */
+  /* background-size: 20%, auto;
+
+  background: repeat-y right url(../css/bulletin.png), no-repeat linear-gradient(to left, steelblue,black);
+} */
+
+/* by default there will be a slight space b/w the image and the section/container , in which it's present irrespective of the text given with it. This happens cause the default display is as an in-block element. To reslove this a display property is used with the block value */
+/* img {
+  display: block;
 }
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.offscreen {
+  position: absolute;
+  left: -10000px;
+}
+
+.container{
+  background-color: bisque;
+  background-image: url(../css/flowers.jpg);
+  background-repeat: repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.hero {
+  border-bottom: 2px solid black;
+  padding: 20px;
+  display: flex;
+  place-content: flex-start center;
+  gap: 30px;
+
+  background-color: hsla(0, 0%, 0%, 0.274);
+}
+
+.h1 {
+  font-size: 500%;
+  color: white;
+  text-shadow: 10px 10px 5px black;
+}
+
+.profile-pic {
+  width: 35%;
+}
+
+.profile-pic img {
+  width: 100%;
+  height: auto;
+  min-height: 100px;
+  border: 5px double green;
+  border-radius: 50%;
+}
+
+.example {
+  margin-top: 1rem;
+  padding-left: 20px;
+  border: 2px solid red;
+} */
+
+/* .example img { */
+  /* if an inline width and height are given with the style tag then in external css also width and height shouls be mentioned */
+  /* width: 25%;
+  height: auto;
+}
+
+.clip{
+  font-weight: 800;
+  font-size: 10rem;
+  text-align: center;
+  background-image: url(../css/flowers.jpg);
+  background-size: 100%;
+  background-clip: text;
+  color: transparent;
+} */
