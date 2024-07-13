@@ -653,11 +653,11 @@ body {
 
 body {
   min-height: 100svh; */
-  /* background-color: aliceblue;
+/* background-color: aliceblue;
   background-image: url(../css/bulletin.png),linear-gradient(to left, steelblue,black);
   background-repeat: repeat-y, no-repeat;
   background-position: right; */
-  /* background-size: 20%, auto;
+/* background-size: 20%, auto;
 
   background: repeat-y right url(../css/bulletin.png), no-repeat linear-gradient(to left, steelblue,black);
 } */
@@ -719,8 +719,8 @@ body {
 } */
 
 /* .example img { */
-  /* if an inline width and height are given with the style tag then in external css also width and height shouls be mentioned */
-  /* width: 25%;
+/* if an inline width and height are given with the style tag then in external css also width and height shouls be mentioned */
+/* width: 25%;
   height: auto;
 }
 
@@ -732,4 +732,105 @@ body {
   background-size: 100%;
   background-clip: text;
   color: transparent;
+} */
+
+/* Media queries */
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font: 1.5rem;
+  min-height: 100svh;
+  background-color: bisque; */
+  /* linear-gradient : color changes in a linear fashion ; radial-gradient : color changes in a radial/circular fashion */
+  /* background-image: radial-gradient(rgb(255, 140, 0), bisque);
+  display: flex;
+  flex-direction: column;
+}
+
+header,
+nav,
+main,
+footer {
+  display: grid;
+  place-content: center;
+  grid-template-columns: 100%;
+  text-align: center;
+}
+
+header,
+footer {
+  background-color: yellowgreen;
+  color: white;
+  position: sticky;
+}
+
+header {
+  top: 0;
+}
+
+nav {
+  background-color: white;
+  color: black;
+  padding: 0.5rem;
+  border-bottom: 2px solid black;
+}
+
+main {
+  flex-grow: 1;
+}
+
+footer {
+  bottom: 0;
+} */
+
+/* use of media queries : for this particular width - apply this styles and for diff width - apply that styles. The syntax can be defined using the Syntax property */
+/* Syntax:
+@media media type and (condition:breakpoint){
+   CSS rules to be written here 
+} */
+
+/* Design the css to be applied to screens from small to big which is good practise and also easy to adapt and change */
+/* According to the below condition, apply the css rules/properties when the width of the window/tab starts to go beyond 481px */
+/* @media screen and (min-width: 481px) { CSS rules } */
+/* According to the below condition, apply the css rules/properties when the orientation of the window/tab goes landscape */
+/* @media screen and (orientation: landscape) { CSS rules } */
+/* According to the below condition, apply the css rules/properties when the aspect-ratio of the window/tab starts to go for 16:9 */
+/* @media screen and (min-aspect-ratio: 16/9) { CSS rules } */
+
+/* If we know the specific breakpoint(in this case width value), then we can use it; If we don't know the breakpoint value then refer the link https://getbootstrap.com/docs/5.0/layout/breakpoints/ */
+/* When the width value goes below 576px, the bg color changes from blue to bisque(css in body) and the following css are applied */
+/* @media screen and (min-width: 576px) {
+  body {
+    background-color: blue;
+    background-image: radial-gradient(whitesmoke, green);
+  }
+
+  nav {
+    display: none;
+  }
+} */
+/* When the width value goes below 768px, the bg color changes from red to bisque(css in body) and the following css are applied */
+/* @media screen and (min-width: 576px) {
+  body {
+    background-color: red;
+    background-image: radial-gradient(whitesmoke, red);
+  }
+} */
+/* When the width value goes below 992px, the bg color changes from gold to bisque(css in body) and the following css are applied */
+/* @media screen and (min-width: 992px) {
+  body {
+    background-color: gold;
+    background-image: radial-gradient(whitesmoke, gold);
+  }
+} */
+/* When the orientation value becomes landscape, the bg color changes from gold to bisque(css in body) and the following css are applied */
+/* @media screen and (max-height: 425px) and (min-aspect-ratio: 7/4) {
+  body {
+    background-color: violet;
+    background-image: radial-gradient(whitesmoke, violet);
+  }
 } */
