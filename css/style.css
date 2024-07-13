@@ -859,8 +859,8 @@ body {
 }
 
 .foot {
-  /* position: sticky; */
-  /* bottom: 0; */
+  position: fixed;
+  bottom: 0;
   width: 100%;
   color: white;
   font-size: 3rem;
@@ -913,7 +913,6 @@ p {
 }
 
 .grouping{
-  min-height: 80vh;
   display: flex;
   flex-wrap: wrap;
   place-content: center;
