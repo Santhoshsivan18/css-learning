@@ -745,8 +745,8 @@ body {
   font: 1.5rem;
   min-height: 100svh;
   background-color: bisque; */
-  /* linear-gradient : color changes in a linear fashion ; radial-gradient : color changes in a radial/circular fashion */
-  /* background-image: radial-gradient(rgb(255, 140, 0), bisque);
+/* linear-gradient : color changes in a linear fashion ; radial-gradient : color changes in a radial/circular fashion */
+/* background-image: radial-gradient(rgb(255, 140, 0), bisque);
   display: flex;
   flex-direction: column;
 }
@@ -834,3 +834,87 @@ footer {
     background-image: radial-gradient(whitesmoke, violet);
   }
 } */
+
+/* Card Project */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5rem;
+  background-color: grey;
+  background-image: radial-gradient(darkgrey, black);
+}
+
+.head {
+  /* position: top; */
+  color: white;
+  font-size: 4rem;
+  text-align: center;
+  background-color: darkviolet;
+}
+
+.foot {
+  /* position: sticky; */
+  /* bottom: 0; */
+  width: 100%;
+  color: white;
+  font-size: 3rem;
+  text-align: center;
+  background-color: darkviolet;
+}
+
+.nav,
+a {
+  background-color: white;
+  text-decoration: underline;
+  color: black;
+  text-align: justify;
+  display: flex;
+  flex-direction: row;
+  place-content: center;
+  gap: 3rem;
+}
+
+a:hover {
+  color: gray;
+}
+
+.card {
+  background-color: lightgray;
+  border: 2px solid black;
+  border-radius: 10%;
+  display: flex;
+  place-content: center;
+  margin: 3%;
+}
+
+.cars {
+  display: flex;
+  place-content: center;
+  flex-direction: column;
+}
+
+.cars img {
+  border: 3px double gray;
+  border-radius: 50%;
+  margin: 10px;
+  width: 200px;
+  height: 200px;
+}
+
+p {
+  display: flex;
+  place-content: center;
+}
+
+.grouping{
+  min-height: 80vh;
+  display: flex;
+  flex-wrap: wrap;
+  place-content: center;
+}
