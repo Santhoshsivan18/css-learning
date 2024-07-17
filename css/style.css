@@ -842,78 +842,240 @@ footer {
   box-sizing: border-box;
 }
 
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   display: flex;
   flex-direction: column;
-  font-size: 1.5rem;
+  font: 1.5rem "Nunito", "sans-serif";
+  min-height: 100svh;
   background-color: grey;
   background-image: radial-gradient(darkgrey, black);
 }
 
-.head {
-  /* position: top; */
+:is(header, footer) {
+  position: sticky;
+  background-color: rgba(133, 113, 113, 0.295);
   color: white;
-  font-size: 4rem;
   text-align: center;
-  background-color: darkviolet;
 }
 
-.foot {
-  position: fixed;
+/* :is(header, footer) - has a specificity of (0, 0, 1) which means when a text color of green is given in header tag in the following the text color changes to green cause header tag css has more priority */
+/* :is(header, footer, .card) - has a specificity of (0, 1, 0) which means that the text color of header will not change to white because the specificity of the header selector (0, 0, 1) is higher than that of :is() (0, 1, 0). */
+/* The :is() pseudo-class takes a list of selectors and applies the style if any of the selectors match. It also reduces the specificity of the compound selector to the specificity of the most specific argument. */
+/* :is(header, footer, .card) {
+  position: sticky;
+  background-color: rgba(133, 113, 113, 0.295);
+  color: white;
+  text-align: center;
+} */
+
+/* The :where() pseudo-class is similar to :is() but always has a specificity of 0. This means it won’t override other styles with higher specificity. */
+/* :where(header, footer, .card) - has a specificity of (0, 0, 0) which means that the text color of header will change to green because the specificity of header (0, 0, 1) is higher than :where() (0, 0, 0), meaning header's style will take precedence. */
+/* :where(header, footer, .card) {
+  position: sticky;
+  background-color: rgba(133, 113, 113, 0.295);
+  color: white;
+  text-align: center;
+} */
+/* 
+The header selector has a specificity of (0, 0, 1).
+The :is(header, footer, .card) selector has a specificity of (0, 1, 0) because it takes the specificity of the most specific argument, which is .card (0, 1, 0).
+The :where(header, footer, .card) selector has a specificity of (0, 0, 0), regardless of the arguments. 
+*/
+header {
+  top: 0;
+  /* color: green; */
+}
+
+footer {
   bottom: 0;
-  width: 100%;
-  color: white;
-  font-size: 3rem;
-  text-align: center;
-  background-color: darkviolet;
 }
 
-.nav,
-a {
+nav {
   background-color: white;
-  text-decoration: underline;
-  color: black;
-  text-align: justify;
+  padding: 0.5rem;
+  border-bottom: 2px solid black;
+  font-weight: bolder;
   display: flex;
-  flex-direction: row;
   place-content: center;
-  gap: 3rem;
+  gap: 5rem;
 }
 
-a:hover {
-  color: gray;
+/* Pseudo-Classes: Style elements based on their state (e.g., :hover, :nth-child). */
+/* Change color on hover */
+/* .nav a:hover {
+      color: red;
+    } */
+/* Style the first link differently */
+/* .nav a:first-child {
+      font-weight: bold;
+    } */
+/* Style the second link */
+/* .nav a:nth-child(2) {
+      text-decoration: underline;
+    } */
+
+/* Pseudo-Elements: Style specific parts of elements (e.g., ::before, ::after). */
+/* Add content before each link */
+/* .nav a::before {
+      content: "Link: ";
+      font-size: 0.9em;
+      color: gray;
+    } */
+/* Add content after each link */
+/* .nav a::after {
+      content: " - Click here";
+      font-size: 0.8em;
+      color: green;
+    } */
+
+/* Pseudo-Selectors: General term often used to refer to both pseudo-classes and pseudo-elements (i.e) comination of both pseudo-classes and pseudo-elements.  */
+/* Add pseudo-element on hover */
+/* .nav a:hover::after {
+      content: " (Hovered)";
+      color: blue;
+    } */
+
+/* to apply the css property values to any link in nav tag */
+nav a:any-link {
+  color: rgb(0, 195, 255);
+}
+
+/* nav a:hover,
+nav a:focus {
+  color: hsla(0, 0%, 20%, 0.6);
+} */
+/* Combine both the pseudo classes using the pseudo selector ":is" */
+nav :is(a:hover, a:focus) {
+  color: hsla(0, 0%, 20%, 0.6);
+}
+
+nav a:active {
+  color: red;
+}
+
+main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1rem;
 }
 
 .card {
-  background-color: lightgray;
+  scroll-margin-top: 8rem;
+  width: min(100%, 350px);
+  background-color: white;
   border: 2px solid black;
-  border-radius: 10%;
+  border-radius: 15px;
+  padding: 1rem;
   display: flex;
-  place-content: center;
-  margin: 3%;
-}
-
-.cars {
-  display: flex;
-  place-content: center;
   flex-direction: column;
+  align-items: center;
 }
 
-.cars img {
-  border: 3px double gray;
+.card figure {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.card:target {
+  border: 5px solid blue;
+}
+
+.card img {
+  border: 5px double #333;
   border-radius: 50%;
-  margin: 10px;
-  width: 200px;
-  height: 200px;
 }
 
-p {
-  display: flex;
-  place-content: center;
+.card:nth-child(even) {
+  background-color: bisque;
 }
 
-.grouping{
-  display: flex;
-  flex-wrap: wrap;
-  place-content: center;
+.card figcaption {
+  font-weight: bolder;
+  font-size: 2rem;
+  margin: 1rem;
+  text-align: center;
+}
+/* .card img[alt] - apply the css properties to all img tag with alt attribute in the card class */
+/* BMW img has no alt attribut hence the border property is not applied */
+/* .card img[alt]{
+  border: 5px solid red;
+} */
+
+/* .card img:not[alt] - apply the css properties to all img tag with no alt attribute in the card class */
+/* BMW img has no alt attribut hence the border property is applied */
+.card img:not([alt]){
+  border: 5px solid red;
+}
+
+@media screen and (min-width: 576px) {
+  main {
+    justify-content: center;
+    flex-flow: row wrap;
+    padding: 1rem;
+  }
+
+  .card {
+    width: min(100%, 400px);
+  }
+
+  .card:last-child {
+    order: -1;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  nav {
+    display: none;
+  }
+
+  .card {
+    width: min(100%, 325px);
+  }
+
+  .card figure {
+    flex-flow: column-reverse;
+  }
+
+  .card p {
+    margin-top: 1rem;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .card {
+    width: min(100%, 400px);
+  }
+
+  .card:nth-child(2) {
+    order: -1;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .card {
+    width: min(33% - 1rem, 500px);
+  }
+}
+
+@media screen and (max-height: 425px) and (min-aspect-ratio: 7/4) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  nav {
+    display: none;
+  }
 }
