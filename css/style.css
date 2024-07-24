@@ -1103,8 +1103,12 @@ main {
 :root {
   /* vars for font */
   --FF: "Nunito", sans-serif;
-  --FS: 1.5rem;
-  --FS-XL: 8rem;
+  /* Functions */
+  /* min(),max(),rgb() are functions */
+  /* clamp() func - combining both min and max funcs */
+  --FS: clamp(1.75rem, 3vh, 2.25rem);
+  --FS-SM: clamp(0.75rem, 2vh, 1rem);
+  --FS-XL: 3rem;
 
   /* vars for colors */
   --BGCOLOR: red;
@@ -1125,14 +1129,14 @@ main {
 /* change the browser themes to view the changes */
 /* if this theme based media properties are not given, then the default css properties are applied and if this theme based media properties are given, then the default css properties are overwritten */
 @media (prefers-color-scheme: dark) {
-  :root{
+  :root {
     --BGCOLOR: black;
     --ALT-BGCOLOR: grey;
     --RADIAL-COLOR: rgb(255, 0, 255);
   }
 }
 @media (prefers-color-scheme: light) {
-  :root{
+  :root {
     --BGCOLOR: rgb(255, 255, 255);
     --ALT-BGCOLOR: rgb(116, 40, 40);
     --RADIAL-COLOR: rgb(0, 0, 0);
@@ -1184,7 +1188,7 @@ nav {
   border-bottom: 2px solid black;
 }
 
-main {
+/* main {
   flex-grow: 1;
   padding: 10px 0;
   display: flex;
@@ -1192,10 +1196,45 @@ main {
   align-items: center;
   flex-flow: row wrap;
   gap: min(4vw, 15px);
+} */
+
+main{
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(100px, 300px));
+  gap: min(2vh, 20px);
+}
+
+main aside{
+  background-color: hsla(0, 0%, 20%, 0.8);
+  font-size: var(--FS-SM);
+  color: bisque;
+  font-style: italic;
+  padding: 10px 0;
 }
 
 footer {
   bottom: 0;
+}
+
+.tooltip{
+  border-bottom: 1px dashed white;
+  position: relative;
+}
+
+.tooltip:hover::before{
+  content: attr(data-tooltip);
+  position: sticky;
+  top: -20px;
+  background-color: black;
+}
+
+a:any-link{
+  color: red;
+}
+
+a:hover, a:focus{
+  filter: brightness(200%);
 }
 
 .square--highlights {
@@ -1212,6 +1251,21 @@ footer {
   border-radius: 80px;
   display: grid;
   place-content: center;
-  font-size: var(--FS-XL);
+  font-size: var(--FS);
   box-shadow: var(--SHADOWS);
+}
+
+@media screen and (min-width: 570px) {
+  main{
+    flex-flow: row nowrap;
+    justify-content: space-between;
+  }
+
+  main section{
+    width: calc(70% - 5px);
+  }
+
+  main aside{
+    width: calc(30% - 5px);
+  }
 }
