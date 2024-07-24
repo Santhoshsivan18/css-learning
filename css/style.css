@@ -836,7 +836,7 @@ footer {
 } */
 
 /* Card Project */
-* {
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -866,7 +866,7 @@ body {
   background-color: rgba(133, 113, 113, 0.295);
   color: white;
   text-align: center;
-}
+} */
 
 /* :is(header, footer) - has a specificity of (0, 0, 1) which means when a text color of green is given in header tag in the following the text color changes to green cause header tag css has more priority */
 /* :is(header, footer, .card) - has a specificity of (0, 1, 0) which means that the text color of header will not change to white because the specificity of the header selector (0, 0, 1) is higher than that of :is() (0, 1, 0). */
@@ -891,11 +891,11 @@ The header selector has a specificity of (0, 0, 1).
 The :is(header, footer, .card) selector has a specificity of (0, 1, 0) because it takes the specificity of the most specific argument, which is .card (0, 1, 0).
 The :where(header, footer, .card) selector has a specificity of (0, 0, 0), regardless of the arguments. 
 */
-header {
-  top: 0;
-  /* color: green; */
-}
-
+/* header {
+  top: 0; */
+/* color: green; */
+/* } */
+/* 
 footer {
   bottom: 0;
 }
@@ -908,7 +908,46 @@ nav {
   display: flex;
   place-content: center;
   gap: 5rem;
+} */
+
+/* to apply the css property values to any link in nav tag */
+/* nav a:any-link {
+  color: rgb(0, 195, 255);
+} */
+
+/* nav a:hover,
+nav a:focus {
+  color: hsla(0, 0%, 20%, 0.6);
+} */
+/* Combine both the pseudo classes using the pseudo selector ":is" */
+/* nav :is(a:hover, a:focus) {
+  color: hsla(0, 0%, 20%, 0.6);
 }
+
+nav a:active {
+  color: red;
+}
+
+main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+.card {
+  scroll-margin-top: 8rem;
+  width: min(100%, 350px);
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 15px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+} */
 
 /* Pseudo-Classes: Style elements based on their state (e.g., :hover, :nth-child). */
 /* Change color on hover */
@@ -944,46 +983,7 @@ nav {
       content: " (Hovered)";
       color: blue;
     } */
-
-/* to apply the css property values to any link in nav tag */
-nav a:any-link {
-  color: rgb(0, 195, 255);
-}
-
-/* nav a:hover,
-nav a:focus {
-  color: hsla(0, 0%, 20%, 0.6);
-} */
-/* Combine both the pseudo classes using the pseudo selector ":is" */
-nav :is(a:hover, a:focus) {
-  color: hsla(0, 0%, 20%, 0.6);
-}
-
-nav a:active {
-  color: red;
-}
-
-main {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.5rem;
-  padding: 1rem;
-}
-
-.card {
-  scroll-margin-top: 8rem;
-  width: min(100%, 350px);
-  background-color: white;
-  border: 2px solid black;
-  border-radius: 15px;
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
+/* 
 .card figure {
   display: flex;
   flex-flow: column nowrap;
@@ -998,8 +998,23 @@ main {
   border-radius: 50%;
 }
 
-.card:nth-child(even) {
+.card:nth-child(odd) {
   background-color: bisque;
+}
+
+.card figcaption::before {
+  content: " \2728";
+  display: block;
+}
+
+.card p::before {
+  content: open-quote;
+  font-size: 3rem;
+}
+
+.card p::after {
+  content: close-quote;
+  font-size: 3rem;
 }
 
 .card figcaption {
@@ -1007,7 +1022,7 @@ main {
   font-size: 2rem;
   margin: 1rem;
   text-align: center;
-}
+} */
 /* .card img[alt] - apply the css properties to all img tag with alt attribute in the card class */
 /* BMW img has no alt attribut hence the border property is not applied */
 /* .card img[alt]{
@@ -1016,7 +1031,7 @@ main {
 
 /* .card img:not[alt] - apply the css properties to all img tag with no alt attribute in the card class */
 /* BMW img has no alt attribut hence the border property is applied */
-.card img:not([alt]){
+/* .card img:not([alt]) {
   border: 5px solid red;
 }
 
@@ -1078,4 +1093,125 @@ main {
   nav {
     display: none;
   }
+} */
+
+/* Variables */
+/* :root - pseudo class which sets the variable values to all elements in html  
+   use "--" to declare variables 
+   captial letter variables are used to declare constant variable values 
+   declare unique var names for best practise */
+:root {
+  /* vars for font */
+  --FF: "Nunito", sans-serif;
+  --FS: 1.5rem;
+  --FS-XL: 8rem;
+
+  /* vars for colors */
+  --BGCOLOR: red;
+  --ALT-BGCOLOR: blue;
+  --RADIAL-COLOR: whitesmoke;
+  --TEXT-COLOR: rgb(0, 255, 0);
+
+  /* vars for class square */
+  --SQUARE-BGCOLOR: papayawhip;
+  --SQUARE-SIZE: max(150px, 20vw);
+  --BORDERS: 2px solid black;
+  --SHADOWS: 6px 5px -5px black;
+}
+
+/* dark mode */
+/* @media (prefers-color-scheme: dark) - the css properties are applied if the browser is in dark theme/mode */
+/* @media (prefers-color-scheme: light) - the css properties are applied if the browser is in light theme/mode */
+/* change the browser themes to view the changes */
+/* if this theme based media properties are not given, then the default css properties are applied and if this theme based media properties are given, then the default css properties are overwritten */
+@media (prefers-color-scheme: dark) {
+  :root{
+    --BGCOLOR: black;
+    --ALT-BGCOLOR: grey;
+    --RADIAL-COLOR: rgb(255, 0, 255);
+  }
+}
+@media (prefers-color-scheme: light) {
+  :root{
+    --BGCOLOR: rgb(255, 255, 255);
+    --ALT-BGCOLOR: rgb(116, 40, 40);
+    --RADIAL-COLOR: rgb(0, 0, 0);
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font: var(--FS) var(--FF);
+  min-height: 100svh;
+
+  /* background-color: black; */
+  /* var() func is used to apply the value of the variable in the respective element */
+  background-color: var(--BGCOLOR);
+  background-image: radial-gradient(var(--RADIAL-COLOR), var(--BGCOLOR));
+  display: flex;
+  flex-direction: column;
+}
+
+header,
+nav,
+footer {
+  display: grid;
+  place-content: center;
+  grid-template-columns: 100%;
+  text-align: center;
+}
+
+header,
+footer {
+  background-color: var(--ALT-BGCOLOR);
+  color: var(--TEXT-COLOR);
+  position: sticky;
+}
+
+header {
+  top: 0;
+}
+
+nav {
+  background-color: white;
+  color: black;
+  padding: 0.5rem;
+  border-bottom: 2px solid black;
+}
+
+main {
+  flex-grow: 1;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-flow: row wrap;
+  gap: min(4vw, 15px);
+}
+
+footer {
+  bottom: 0;
+}
+
+.square--highlights {
+  /* --SQUARE-BGCOLOR, --SQUARE-SIZE var values are overwritten(override) here */
+  --SQUARE-BGCOLOR: blue;
+  --SQUARE-SIZE: 200px;
+}
+
+.square {
+  background-color: var(--SQUARE-BGCOLOR);
+  width: var(--SQUARE-SIZE);
+  height: var(--SQUARE-SIZE);
+  border: var(--BORDERS);
+  border-radius: 80px;
+  display: grid;
+  place-content: center;
+  font-size: var(--FS-XL);
+  box-shadow: var(--SHADOWS);
 }
