@@ -13,7 +13,7 @@ However, specificity and important declarations can alter this order.*/
    p - selector
    color - property
    red - property value
-   color: red; - declaration 
+   color: red; - declaration
    p { color: red; font-size: 72px; } - Ruleset
 */
 
@@ -1198,14 +1198,14 @@ nav {
   gap: min(4vw, 15px);
 } */
 
-main{
+main {
   flex-grow: 1;
   display: grid;
   grid-template-columns: repeat(4, minmax(100px, 300px));
   gap: min(2vh, 20px);
 }
 
-main aside{
+main aside {
   background-color: hsla(0, 0%, 20%, 0.8);
   font-size: var(--FS-SM);
   color: bisque;
@@ -1217,23 +1217,24 @@ footer {
   bottom: 0;
 }
 
-.tooltip{
+.tooltip {
   border-bottom: 1px dashed white;
   position: relative;
 }
 
-.tooltip:hover::before{
+.tooltip:hover::before {
   content: attr(data-tooltip);
   position: sticky;
   top: -20px;
   background-color: black;
 }
 
-a:any-link{
+a:any-link {
   color: red;
 }
 
-a:hover, a:focus{
+a:hover,
+a:focus {
   filter: brightness(200%);
 }
 
@@ -1256,16 +1257,16 @@ a:hover, a:focus{
 }
 
 @media screen and (min-width: 570px) {
-  main{
+  main {
     flex-flow: row nowrap;
     justify-content: space-between;
   }
 
-  main section{
+  main section {
     width: calc(70% - 5px);
   }
 
-  main aside{
+  main aside {
     width: calc(30% - 5px);
   }
 }
